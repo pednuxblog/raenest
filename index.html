@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap-grid.min.css" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+
+    <link rel="stylesheet" href="raenest.css">
+</head>
+<body>
+
+
+
+
+
+  <header class="navbar">
+  <a href="index.html" class="logo"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiB2aWV3Qm94PSIwIDAgMTI4IDIyIiBmaWxsPSJub25lIiBjbGFzcz0ibmF2X2xvZ28iIHN0eWxlPSJjb2xvcjogcmdiKDM2LCAzMiwgMzApOyI+PGcgY2xpcC1wYXRoPSJ1cmwoI2NsaXAwXzM0MTBfMTQxMjkpIj48cGF0aCBkPSJNMzcuODMzMiA4Ljg5OTM0QzM3LjI5OCA4Ljc1Njc5IDM2Ljc5ODYgOC42ODU3NSAzNi4xMjA4IDguNjg1NzVDMzQuMDg3MyA4LjY4NTc1IDMxLjc2ODMgOS44OTYyNiAzMS43NjgzIDEzLjIwNzRWMjEuMDA0OEgyNy41MjI1VjQuNTU1NTVIMzEuNzY4M0wzMS42OTcgOC4yNzgxQzMyLjM3NDcgNS4zOTQxNSAzNC4xNTg2IDMuOTg1ODMgMzguMjYxMyA0LjE5OTQyTDM3LjgzMzIgOC44OTkzNFoiIGZpbGw9ImN1cnJlbnRDb2xvciIgY2xhc3M9Im5hdl9yYWVuZXN0X2xvZ28tdGV4dCI+PC9wYXRoPjxwYXRoIGQ9Ik01MS45MjU1IDE2LjM3NjFDNTEuOTI1NSAxNy41NTExIDUyLjQyNSAxNy45MDczIDUzLjEzODcgMTcuOTA3M0M1My41MzEyIDE3LjkwNzMgNTMuODE2NCAxNy44MDA1IDU0LjEzNzYgMTcuNjU3OVYyMC43OTEyQzUzLjUzMTIgMjEuMTQ3MSA1Mi43NDYyIDIxLjI4OTcgNTEuNzQ3MyAyMS4yODk3QzQ5LjcxMzcgMjEuMjg5NyA0OC40MjkzIDIwLjUwNjMgNDguMDAxMiAxOC42OTA2QzQ3LjIxNjIgMjAuNzE5OSA0NS4zNjEyIDIxLjQzMiA0My4xODQ4IDIxLjQzMkM0MC4yNTkzIDIxLjQzMiAzOC4yOTY5IDE5Ljc1ODUgMzguMjk2OSAxNi45NDU5QzM4LjI5NjkgMTMuMjc4NiA0MS4yMjI2IDExLjI0OTMgNDcuNjggMTEuNjA1MlY5Ljg2MDcyQzQ3LjY4IDguMjU4MzEgNDYuODk1IDcuNDAzOTYgNDUuNDMyNSA3LjQwMzk2QzQzLjkzMzkgNy40MDM5NiA0My4xNDkxIDguMzI5NTkgNDMuMDQyMiA5Ljg5NjIyTDM4Ljg2NzkgOS4xNDg0MkMzOS4xMTc1IDUuNjU5MjUgNDIuMTE0MyA0LjE2Mzg4IDQ1LjY0NjUgNC4xNjM4OEM0OS40MjgyIDQuMTYzODggNTEuOTI1NSA1Ljc2NjAzIDUxLjkyNTUgOS40NjkwNVYxNi4zNzYxWk00Ny42OCAxMy45OTA3QzQzLjk2OTggMTMuODgzOSA0Mi41NDI3IDE0LjgwOTUgNDIuNTQyNyAxNi40ODI5QzQyLjU0MjcgMTcuNTg2OSA0My4yOTE4IDE4LjM2OTkgNDQuNjQ3NSAxOC4zNjk5QzQ2LjAzOSAxOC4zNjk5IDQ3LjY4IDE3LjYyMjQgNDcuNjggMTUuOTEzNVYxMy45OTA3WiIgZmlsbD0iY3VycmVudENvbG9yIiBjbGFzcz0ibmF2X3JhZW5lc3RfbG9nby10ZXh0Ij48L3BhdGg+PHBhdGggZD0iTTY1LjA1MjcgMTUuNzcwOUw2OC42OTE2IDE2Ljk0NTlDNjcuOTA2OCAyMC4yNTcgNjQuOTgxNCAyMS40MzIgNjEuNzcwNCAyMS40MzJDNTcuMTY4IDIxLjQzMiA1NC4wMjgzIDE4LjM2OTkgNTQuMDI4MyAxMi45OTM3QzU0LjAyODMgNy4zNjgyIDU3LjA2MSA0LjE2Mzg4IDYxLjg3NzQgNC4xNjM4OEM2Ni40MDgyIDQuMTYzODggNjguNjkxNiA3LjE5MDM1IDY4LjY5MTYgMTEuMzU2MUM2OC42OTE2IDEyLjEzOTQgNjguNjIwNSAxMi45MjI1IDY4LjQ0MiAxMy41NjM1SDU4LjEzMTNDNTguMjM4MiAxNi4zMDUxIDU5LjUyMjcgMTguMTU2NCA2MS45MTMgMTguMTU2NEM2My4zNzYgMTguMTU2NCA2NC40ODE5IDE3LjU4NjkgNjUuMDUyNyAxNS43NzA5Wk02NC41ODg5IDExLjAzNTVDNjQuNjI0NSAxMC43ODYzIDY0LjYyNDUgMTAuNjQzOCA2NC42MjQ1IDEwLjQzMDJDNjQuNjI0NSA4LjY4NTcyIDYzLjU5IDcuMzY4MiA2MS42OTg4IDcuMzY4MkM1OS43MzY5IDcuMzY4MiA1OC40ODgxIDguNzkyNTIgNTguMjM4MiAxMS4wMzU1SDY0LjU4ODlaIiBmaWxsPSJjdXJyZW50Q29sb3IiIGNsYXNzPSJuYXZfcmFlbmVzdF9sb2dvLXRleHQiPjwvcGF0aD48cGF0aCBkPSJNNzQuNzY4NCA3LjcyNDMzQzc1LjY2MDMgNS4yNjc1OCA3Ny4zNTAzIDQuMTYzODggNzkuODgzMyA0LjE2Mzg4QzgyLjQ4NzkgNC4xNjM4OCA4NC43NzEyIDUuNjU5MjUgODQuNzcxMiA5LjMyNjVWMjEuMDA0OEg4MC41MjU0VjEwLjgyMThDODAuNTI1NCA4LjkzNDg0IDc5Ljg4MzMgNy43NTk4NCA3OC4wOTk3IDcuNzU5ODRDNzYuMzg3MSA3Ljc1OTg0IDc0Ljc4MTQgOC42ODU3MiA3NC43ODE0IDExLjgxODhWMjEuMDA0OEg3MC41MzYxVjQuNTU1NTJINzQuNzY4NFY3LjcyNDMzWiIgZmlsbD0iY3VycmVudENvbG9yIiBjbGFzcz0ibmF2X3JhZW5lc3RfbG9nby10ZXh0Ij48L3BhdGg+PHBhdGggZD0iTTk3LjM4NzQgMTUuNzcwOUwxMDEuMDI3IDE2Ljk0NTlDMTAwLjI0MiAyMC4yNTcgOTcuMzE2MSAyMS40MzIgOTQuMTA1MSAyMS40MzJDODkuNTAzIDIxLjQzMiA4Ni4zNjMzIDE4LjM2OTkgODYuMzYzMyAxMi45OTM3Qzg2LjM2MzMgNy4zNjgyIDg5LjM5NTcgNC4xNjM4OCA5NC4yMTIzIDQuMTYzODhDOTguNzQzMiA0LjE2Mzg4IDEwMS4wMjcgNy4xOTAzNSAxMDEuMDI3IDExLjM1NjFDMTAxLjAyNyAxMi4xMzk0IDEwMC45NTUgMTIuOTIyNSAxMDAuNzc3IDEzLjU2MzVIOTAuNDY2QzkwLjU3MjkgMTYuMzA1MSA5MS44NTc0IDE4LjE1NjQgOTQuMjQ3NyAxOC4xNTY0Qzk1LjcxMDcgMTguMTU2NCA5Ni44MTY2IDE3LjU4NjkgOTcuMzg3NCAxNS43NzA5Wk05Ni45MjM2IDExLjAzNTVDOTYuOTU5NSAxMC43ODYzIDk2Ljk1OTUgMTAuNjQzOCA5Ni45NTk1IDEwLjQzMDJDOTYuOTU5NSA4LjY4NTcyIDk1LjkyNDcgNy4zNjgyIDk0LjAzMzggNy4zNjgyQzkyLjA3MTYgNy4zNjgyIDkwLjgyMjggOC43OTI1MiA5MC41NzI5IDExLjAzNTVIOTYuOTIzNloiIGZpbGw9ImN1cnJlbnRDb2xvciIgY2xhc3M9Im5hdl9yYWVuZXN0X2xvZ28tdGV4dCI+PC9wYXRoPjxwYXRoIGQ9Ik0xMDUuMzQzIDE1LjkxMzVDMTA1LjY2NCAxNy43MjkyIDEwNi45ODQgMTguNDQxMiAxMDguNjYxIDE4LjQ0MTJDMTEwLjE5NSAxOC40NDEyIDExMS4yNjUgMTcuOTA3MyAxMTEuMjY1IDE2Ljc2NzhDMTExLjI2NSAxNS42OTk2IDExMC42MjMgMTUuMTY1NiAxMDkuMDE3IDE0LjczODVMMTA2LjU5MSAxNC4xNjg3QzEwMy42NjYgMTMuNDU2NyAxMDIuMzgyIDExLjg1NDUgMTAyLjM4MiA5LjM2MjAxQzEwMi4zODIgNS4zNzQzNiAxMDUuNjI4IDQuMTYzODggMTA4Ljk0NiA0LjE2Mzg4QzExMi42OTMgNC4xNjM4OCAxMTQuOTc2IDUuNTE2OTMgMTE1LjI2MSA4LjcyMTI1TDExMS4yMyA5LjI5MDk3QzExMS4wODcgNy44NjY2NSAxMTAuMjY2IDcuMzMyNjcgMTA4LjczMiA3LjMzMjY3QzEwNy4zNzYgNy4zMzI2NyAxMDYuNTIgNy45Mzc5MiAxMDYuNTIgOC45NzA2QzEwNi41MiA5Ljg5NjIyIDEwNy4wMiAxMC40NjYgMTA4LjM0IDEwLjcxNTFMMTEwLjY1OSAxMS4yNDkzQzExMy44NyAxMS45NjEzIDExNS40MzkgMTMuNTk5IDExNS40MzkgMTYuNDExOUMxMTUuNDM5IDIwLjA0MzQgMTEyLjUxNCAyMS40MzIgMTA4LjYyNSAyMS40MzJDMTA0LjY2NSAyMS40MzIgMTAyLjM0NiAyMC4yOTI3IDEwMS43NzUgMTcuMjMwN0wxMDUuMzQzIDE1LjkxMzVaIiBmaWxsPSJjdXJyZW50Q29sb3IiIGNsYXNzPSJuYXZfcmFlbmVzdF9sb2dvLXRleHQiPjwvcGF0aD48cGF0aCBkPSJNMTI3Ljg5MSAyMC4zOTk2QzEyNi42MDYgMjEuMDc2MSAxMjUuMDAxIDIxLjQzMiAxMjMuMTgxIDIxLjQzMkMxMjAuMDA2IDIxLjQzMiAxMTcuOTcyIDE5LjkwMTEgMTE3Ljk3MiAxNi4zNDA3VjcuODY2NjhIMTE1LjU4MlY0LjU1NTU2SDExOC4wMDhWMS4wNjYzOUwxMjIuMjU0IDAuNTY3OTMyVjQuNTU1NTZIMTI3LjE0MVY3Ljg2NjY4SDEyMi4yMThWMTUuNDE1QzEyMi4yMTggMTcuMTk1MyAxMjIuOTY3IDE3LjgwMDUgMTI0LjI4NyAxNy44MDA1QzEyNS4zMjIgMTcuODAwNSAxMjYuMTc4IDE3LjQ3OTkgMTI3LjE0MSAxNi44MzkxTDEyNy44OTEgMjAuMzk5NloiIGZpbGw9ImN1cnJlbnRDb2xvciIgY2xhc3M9Im5hdl9yYWVuZXN0X2xvZ28tdGV4dCI+PC9wYXRoPjxwYXRoIGQ9Ik0yMS4zNjgzIDcuOTM5NTdDMjEuMjY2OCA4LjUwNDA1IDIxLjExOTIgOS4wODA4MiAyMC45MjY2IDkuNjYzOTNDMjAuNDM0MyAxMS4xNTEgMjAuMDM5NCAxMi42Njg2IDE5Ljc2ODkgMTQuMjExNkMxOS4zNDkgMTYuNjA3MyAxNy45NDA4IDE4LjUxNzUgMTYuMDE4NSAxOS45Nzc0QzE0LjE3NzYgMjEuMzc2MyAxMS45NzUyIDIxLjY4MTggOS44MDAxIDIxLjI1MTNDOS4xODY4NyAyMS4xMzAyIDguNTkxNzggMjAuOTQwOSA4LjAyMjk4IDIwLjY5MTZDNy40MDk2MyAyMC40MjI4IDYuOTIzNzIgMTkuOTI1OCA2LjY3MzgxIDE5LjMwNTVDNi41MDAyMSAxOC44NzQ2IDYuMDQ4NjkgMTcuMjc4IDUuOTI4NzcgMTYuODY3MUM1Ljg5NDEyIDE2Ljc0ODQgNi4wMDY5OCAxNi42NDE0IDYuMTI1NDQgMTYuNjc3N0M2LjE0OTQyIDE2LjY4NTEgNi4xNzM1OCAxNi42OTIxIDYuMTk3OSAxNi42OTg3QzkuMDQwMiAxNy40NzQ2IDEzLjQxODQgMTcuMzk5OSAxNi44NTE0IDE0LjQzMTJDMTcuNzAxMyAxMy42OTU4IDE4LjQ1MTggMTIuOTA3MiAxOS4wOTQ5IDEyLjA5MjNDMTkuNjA5NSAxMS40Mzk3IDE5Ljc5NzYgMTAuNTg5MyAxOS42MDI3IDkuNzgyMUMxOS4zMDggOC41NjI2OCAxOC44MDc1IDcuMzQ3ODEgMTguMDkyNSA2LjE5NjExQzE3LjA3NiA0LjU1ODU3IDE1Ljc1MTYgMy4yNTE4OCAxNC4yODE1IDIuMzI4MzRDMTMuMzgxNiAxLjc2Mjk0IDEyLjIzMDIgMS43ODcwNCAxMS4zNDc2IDIuMzc4NzlDOS45OTc3NSAzLjI4MzcgOC42OTQ3OCA0LjUwNTM4IDcuNTY0ODggNS45OTc1QzUuNjE0MjkgOC41NzI2OCA0LjU3OTU2IDExLjQyNDIgNC41MTg5OSAxMy44NTk0SDQuNTE2MjZDNC41MTAyMyAxMy45ODA2IDQuNDIxMDggMTUuOTk1OSA1LjE3MjIgMTguNDc2N0M1LjIwOTQyIDE4LjU5OTcgNS4wNjE5NCAxOC42OTUgNC45NjUzOCAxOC42MTAxQzMuNzg5MDggMTcuNTc1NSAyLjc5MzgzIDE2LjQ5NjEgMi4wMjE0NCAxNS41NzE1Qy0wLjA2MTY2OTUgMTMuMDc3MiAtMC41OTA4NzMgOS42MjAzIDAuNjk2MTU4IDYuNjM3ODlDMS40OTk5OCA0Ljc3NDkgMi44OTM1OCAzLjA5NTA3IDQuODAzNjMgMS45MTM4NEM2LjQ5MTg5IDAuODY5ODU1IDguNDUwNjcgMC41NDUzNDkgMTAuMzkyMSAwLjg0NjY3NkMxMS44MjkgMS4wNjk4MyAxMy4yOTU5IDEuMDQzMDIgMTQuNzIxNCAwLjc1ODA1MUMxNS4xODY5IDAuNjY1MzMxIDE1LjY0MzIgMC42MDYyNDUgMTYuMDg1OSAwLjU4MTI0NUgxNi4wOUMxNi40MjkzIDAuNTYyMTYgMTYuNzYwOCAwLjU2MzUyNCAxNy4wODIzIDAuNTg1Nzk0SDE3LjA4MzdDMTguNTQ5MyAwLjY4NjY5MiAxOS44MDQ5IDEuMjE2MTkgMjAuNjYzMyAyLjIwNDcyQzIxLjg5MzkgMy42MjE4NCAyMi4wNzMzIDUuNzExNjIgMjEuMzY4MyA3LjkzOTU3WiIgZmlsbD0iY3VycmVudENvbG9yIiBjbGFzcz0ibmF2X3JhZW5lc3QtaWNvbiBpcy1kYXJrIiBzdHlsZT0iY29sb3I6IHJnYig3OSwgNjMsIDIxNSk7Ij48L3BhdGg+PC9nPjwvc3ZnPg==" alt="Raenest"></a>
+
+  <div class="switch">
+    <a href="https://www.raenest.com/" class="active">Personal</a>
+    <a href="https://www.raenest.com/business/home">Business</a>
+  </div>
+
+  <input type="checkbox" id="menu">
+  <label for="menu" class="burger"></label>
+
+  <nav>
+    <div class="drop" tabindex="0">Products
+      <div class="menu">
+        <a href="https://www.raenest.com/send-money"><img src="https://cdn.prod.website-files.com/67d8614570bbea9ea5932686/680ce2bf1e6a785ba85c13cb_Transfer.svg" width="40" alt=""><b>Send Money</b><small>Global money transfers</small></a>
+        <a href="https://www.raenest.com/cards"><img src="https://cdn.prod.website-files.com/67d8614570bbea9ea5932686/68239c0dc29e29453547ee6a_cards.svg" width="40" alt=""><b>Cards</b><small>Virtual and physical cards for you</small></a>
+        <a href="https://www.raenest.com/receive-money"><img src="https://cdn.prod.website-files.com/67d8614570bbea9ea5932686/680ce2a61e6a785ba85c078c_payment.svg" width="40" alt=""><b>Receive Money</b><small>Receive money from over 190 countries</small></a>
+        <a href="https://www.raenest.com/global-accounts"><img src="https://cdn.prod.website-files.com/67d8614570bbea9ea5932686/680ce2953da744757b732669_account.svg" width="40" alt=""><b>Global Accounts</b><small>Multi-currency accounts easily accessible</small></a>
+        <a href="https://www.raenest.com/invoices"><img src="https://cdn.prod.website-files.com/67d8614570bbea9ea5932686/680ce2d0e8ed903a584503c4_invoices.svg" width="40" alt=""><b>Invoices</b><small>Smart invoicing for professionals</small></a>
+        <a href="https://www.raenest.com/us-stocks"><img src="https://cdn.prod.website-files.com/67d8614570bbea9ea5932686/695ce6f93717922d4d1199cd_Investment.png" width="40" alt=""><b>US Stocks</b><small>Buy U.S. stocks with ease</small></a>
+        <a href="https://www.raenest.com/upwork"><img src="https://cdn.prod.website-files.com/67d8614570bbea9ea5932686/696a46376def75bcf4f008f6_Icon.png" width="40" alt=""><b>Upwork</b><small>Upwork earnings to Raenest in under one hour</small></a>
+        <a href="https://www.raenest.com/stablecoins"><img src="https://cdn.prod.website-files.com/67d8614570bbea9ea5932686/696a7dbfd07b3600199ad467_Item.png" width="40" alt=""><b>Stablecoins</b><small>Receive USDC & USDT on Raenest</small></a>
+      </div>
+    </div>
+
+    <div class="drop" tabindex="0">Earn
+      <div class="menu">
+        <a href="https://www.raenest.com/referral"><img src="https://cdn.prod.website-files.com/67d8614570bbea9ea5932686/680ce36fd81697df3fcadbd6_Referrals.svg" width="40" alt=""><b>Referral</b><small>Share Raenest and Earn</small></a>
+        <a href="https://www.raenest.com/creator-club"><img src="https://cdn.prod.website-files.com/67d8614570bbea9ea5932686/680ce2ec27b16308a5434836_Creator%20Club.svg" width="40" alt=""><b>Creator Club</b><small>Get paid to promote Raenest</small></a>
+        <a href="https://www.raenest.com/rewards"><img src="https://cdn.prod.website-files.com/67d8614570bbea9ea5932686/680ce343d4a3798fc70686c3_Rewards.svg" width="40" alt=""><b>Rewards</b><small>Earn while you spend</small></a>
+      </div>
+    </div>
+
+    <a href="https://www.raenest.com/blog">News & Blog</a>
+
+    <div class="drop lang" tabindex="0">
+      <img src="https://flagcdn.com/w40/gb.png" alt="">English <i></i>
+      <div class="menu">
+        <a href="https://www.raenest.com/">English</a>
+        <a href="https://www.raenest.com/es-ar">Spanish (Argentina)</a>
+        <a href="https://www.raenest.com/fr">French</a>
+        <a href="https://www.raenest.com/pt-br">Portuguese (Brazil)</a>
+        <a href="https://www.raenest.com/es-co">Spanish (Colombia)</a>
+      </div>
+    </div>
+
+    <div class="btns">
+      <a href="https://app.raenest.com/" class="btn">Login</a>
+      <a href="https://app.raenest.com/register" class="btn fill">Create an account</a>
+    </div>
+  </nav>
+</header>
+
+
+
+<section class="hero">
+  <div>
+    <div class="flags">
+      <div class="track">
+        <img src="https://cdn.prod.website-files.com/67d85bdb392a92fa03e2f524/67fd3978144edecc8948f7ff_logo%20marquee.svg" alt="">
+        
+        <!-- same flags again for a smooth loop -->
+        <img src="https://cdn.prod.website-files.com/67d85bdb392a92fa03e2f524/67fd3978144edecc8948f7ff_logo%20marquee.svg" alt="" >
+        
+      </div>
+    </div>
+
+    <h1>Receive and spend money globally</h1>
+    <p>Get paid from anywhere in global currencies and do more with money—spend, earn on savings, and invest.</p>
+
+    <div class="buttons">
+      <a href="https://app.raenest.com/register" class="white">Create an account</a>
+      <div class="download">
+        <a href="https://referral.raenest.com/WzbV/f22cg6nd" class="light"> <span class="store-icons">
+              <i class="bi bi-apple"></i>
+              <span class="icon-divider"></span>
+              <i class="bi bi-google-play"></i>
+            </span> Download app</a>
+        <div class="qr">
+          Scan the QR code below to download the app
+          <img src="https://cdn.prod.website-files.com/67d85bdb392a92fa03e2f524/697bfa5ae287c5ee4c604de9_176il45u_qr_code.png" alt="QR code">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-img">
+    <picture>
+      <source media="(max-width: 1024px)" srcset="https://cdn.prod.website-files.com/67d85bdb392a92fa03e2f524/680a8cd600a89f0fd7559812_personal%20hero%20mobile.webp">
+      <img src="https://cdn.prod.website-files.com/67d85bdb392a92fa03e2f524/67fd3b6d48813d28793babef_Hero%20img%20personal.webp" alt="" class="lady">
+    </picture>
+    <img src="https://cdn.prod.website-files.com/67d85bdb392a92fa03e2f524/67dd9af140daebeba53a0da1_hero%20UI%20elements-1.png" class="card" alt="">
+  </div>
+</section>
+
+
+
+
+
+<section class="trust">
+  <h2>Backed and trusted by the best in fintech and venture capital</h2>
+
+  <div class="logos">
+    <img src="https://cdn.prod.website-files.com/67d85bdb392a92fa03e2f524/67da66e25339e051897888ee_qed.png" alt="QED Investors">
+    <img src="https://cdn.prod.website-files.com/67d85bdb392a92fa03e2f524/67da66e2ddf67bd881749128_google.png" alt="Google">
+    <img src="https://cdn.prod.website-files.com/67d85bdb392a92fa03e2f524/67da66e289b6706c3b42531a_vp.png" alt="Ventures Platform">
+    <img src="https://cdn.prod.website-files.com/67d85bdb392a92fa03e2f524/67da66e2ac4a8a6c96a04547_techstars.png" alt="Techstars">
+    <img src="https://cdn.prod.website-files.com/67d85bdb392a92fa03e2f524/67da66e2a1e0321127b392e8_seedstars.png" alt="Seedstars">
+    <img src="https://cdn.prod.website-files.com/67d85bdb392a92fa03e2f524/6970a42908ffd82bfbc701b1_61f171f1e7e4fd0fe075a36a_n22_logo_2-p-500%20%282%29%201%20%281%29.png" alt="Norrsken22">
+  </div>
+</section>
+
+
+
+
+
+
+
+<section class="reviews">
+  <div class="container">
+
+    <div class="reviews-head">
+      <h2>Over 1,000,000 people love us. You will too.</h2>
+      <p>Hear some of them yourself.</p>
+    </div>
+
+    <div class="rnReviews">
+
+ <div class="rnReviewSide">
+ <div class="rnReviewCard">
+ <div>
+ <h3>Unimaginably Excellent</h3>
+ <p>
+ I could not imagine how great Raenest works until I signed up with
+ them. Honestly, this is my first time reviewing about any website but
+ I must say that I'm happy to write how excellent they operate.
+ </p>
+ </div>
+
+ <div class="rnReviewer">
+ <img src="https://flagcdn.com/w80/gh.png" alt="">
+ <span>Kevin</span>
+ </div>
+ </div>
+
+ <div class="rnReviewCard">
+ <div>
+ <h3>Best in Class Support</h3>
+ <p>Raenest is a great company with one of the best supports I’ve ever seen.</p>
+ </div>
+
+ <div class="rnReviewer">
+ <img src="https://flagcdn.com/w80/ng.png" alt="">
+ <span>Theresa</span>
+ </div>
+ </div>
+ </div>
+
+ <div class="rnVideoCol">
+ <div class="rnVideoCard">
+ <a
+ class="rnVideoPreview"
+ href="https://youtu.be/g3D_YGKjyms"
+ target="_blank"
+ rel="noopener"
+ aria-label="Watch the Raenest customer review on YouTube"
+ >
+ <img
+ src="https://img.youtube.com/vi/g3D_YGKjyms/maxresdefault.jpg"
+ alt="Raenest customer review video"
+ >
+ <span class="rnPlayBtn"></span>
+ </a>
+
+ <div class="rnReviewer rnVideoName">
+ <img src="https://flagcdn.com/w80/ng.png" alt="">
+ <span>Moyinoluwa</span>
+ </div>
+ </div>
+
+ <div class="rnRating">
+ <span class="rnStars">★ ★ ★ ★ <span>★</span></span>
+ <span>4.6 Apple store, Play store</span>
+ </div>
+ </div>
+
+ <div class="rnReviewSide">
+ <div class="rnReviewCard">
+ <div>
+ <h3>Best exchange rates</h3>
+ <p>
+ The platform is intuitive, seamless and easy to use. It is also the
+ Fintech platform with the best exchange rates for sending money.
+ </p>
+ </div>
+
+ <div class="rnReviewer">
+ <img src="https://flagcdn.com/w80/ng.png" alt="">
+ <span>Banji</span>
+ </div>
+ </div>
+
+ <div class="rnReviewCard">
+ <div>
+ <h3>Seamless for Transfers</h3>
+ <p>
+ Raenest has been helping me since last year that I found it, I don't
+ have to stress about transfer anymore as it comes quickly and very fast.
+ </p>
+ </div>
+
+ <div class="rnReviewer">
+ <img src="https://flagcdn.com/w80/ke.png" alt="">
+ <span>Blessing</span>
+ </div>
+ </div>
+ </div>
+</section>
+
+
+
+
+
+
+<section class="rnSlidesSection">
+ <div class="mother">
+
+ <div class="child1">
+ <img class="panelImage" src="https://cdn.prod.website-files.com/67d85bdb392a92fa03e2f524/6970bf1187dee404aee42a83_Raenest_India_2.png" alt="">
+ <span class="panelLabel">Receive money</span>
+ <img class="panelUi receiveUi" src="https://cdn.prod.website-files.com/67d85bdb392a92fa03e2f524/67dbf3dde33fa740f7d812b1_slider%201%20ui%20element%2001.svg" alt="">
+ <div class="panelText receiveText">
+ <h2>The reliable way to get paid</h2>
+ <p>Get paid on time, every time, with accounts in USD, GBP, or EUR, plus easy invoicing and payment links.</p>
+ <a href="https://www.raenest.com/receive-money">Learn more <span>→</span></a>
+ </div>
+ </div>
+
+ <div class="child2">
+ <img class="panelImage" src="https://cdn.prod.website-files.com/67d85bdb392a92fa03e2f524/67da657539515e002e5ccd03_global%20acc%20slider2%20img.png" alt="">
+ <span class="panelLabel">Global accounts</span>
+ <img class="panelUi globalUi" src="https://cdn.prod.website-files.com/67d85bdb392a92fa03e2f524/67dbf3dd29d1f0d510cbbadb_slider%201%20ui%20element%2002.svg" alt="">
+ <div class="panelText globalText">
+ <h2>Global Accounts</h2>
+ <p>Get USD, GBP, EUR, USDT and USDC accounts in minutes so you can focus on what matters most—receiving, spending and saving your money.</p>
+ <a href="https://www.raenest.com/global-accounts">Learn more <span>→</span></a>
+ </div>
+ </div>
+
+ <div class="child3">
+ <img class="panelImage" src="https://cdn.prod.website-files.com/67d85bdb392a92fa03e2f524/69d79ee49c0d8b67d4ad1a64_newvisacard.jpg" alt="">
+ <span class="panelLabel">Cards</span>
+ <img class="panelUi cardsUi" src="https://cdn.prod.website-files.com/67d85bdb392a92fa03e2f524/67fe699339ac16e6ca35f2ca_CARD%20occasion.svg" alt="">
+ <div class="panelText cardsText">
+ <h2>Cards for every occasion</h2>
+ <p>Work, shop, travel – you decide. Our virtual and physical cards give you the power with transparent pricing, accepted wherever Visa is accepted. Whether it’s Google, Canva, Zoom, AWS, Amazon, eBay etc. We’ve got you.</p>
+ <a href="https://www.raenest.com/cards">Learn more <span>→</span></a>
+ </div>
+ </div>
+
+ <div class="child4">
+ <img class="panelImage" src="https://cdn.prod.website-files.com/67d85bdb392a92fa03e2f524/69735a6bd934d9d0ad410999_Raenest_55.png" alt="">
+ <span class="panelLabel">Send money</span>
+ <img class="panelUi sendUi" src="https://cdn.prod.website-files.com/67d85bdb392a92fa03e2f524/67dbf3ddd6d8be5ace14bf5a_slider%201%20ui%20element%2004.svg" alt="">
+ <div class="panelText sendText">
+ <h2>Fast money transfers</h2>
+ <p>Sending money is now easier and more affordable with reasonable upfront transaction fees and flexible transfer options. Get started today and send your first transfer in minutes.</p>
+ <a href="https://www.raenest.com/send-money">Learn more <span>→</span></a>
+ </div>
+ </div>
+
+ <div class="child5">
+ <img class="panelImage" src="https://cdn.prod.website-files.com/67d85bdb392a92fa03e2f524/6973511d15f05ffbebd9d4f1_Raenest_Philipines%201.png" alt="">
+ <span class="panelLabel">Earn</span>
+ <div class="panelText earnText">
+ <h2>Exclusive rewards & perks</h2>
+ <p>The more you transact, the more you earn real money — unlock monthly rewards.</p>
+ <a href="https://www.raenest.com/rewards">Learn more <span>→</span></a>
+ </div>
+ </div>
+
+ </div>
+</section>
+
+
+
+
+
+
+
+
+
+<section class="everyone">
+
+  <div class="every-head">
+    <h2>Raenest for everyone</h2>
+
+    <div class="tabs">
+      <input type="radio" name="tab" id="t1" checked><label for="t1">Freelancers & Creators</label>
+      <input type="radio" name="tab" id="t2"><label for="t2">Travelers</label>
+      <input type="radio" name="tab" id="t3"><label for="t3">Online Shoppers</label>
+      <input type="radio" name="tab" id="t4"><label for="t4">Students</label>
+      <input type="radio" name="tab" id="t5"><label for="t5">Social Sellers</label>
+    </div>
+  </div>
+
+  <div class="view">
+    <div class="slides">
+      <img src="free1.png" alt="Freelancers and Creators">
+      <img src="free2.png" alt="Travelers">
+      <img src="free3.png" alt="Online Shoppers">
+      <img src="free4.png" alt="Students">
+      <img src="free5.png" alt="Social Sellers">
+    </div>
+  </div>
+
+</section>
+
+
+
+
+
+
+
+<section class="cta">
+  <div class="cta-box d-flex flex-column align-items-center justify-content-center">
+    <h2>Raenest for business</h2>
+    <p>Join over 11,000 businesses making international payments and receiving money in 13+ countries on Raenest business.</p>
+    <a href="https://app.raenest.com/register" class="cta-btn">Open a business account</a>
+  </div>
+</section>
+
+
+
+
+
+
+
+<section class="mock">
+  <div class="mock-text">
+    <h2>Your Money,<br>Wherever You Need It</h2>
+    <p>Send and withdraw funds to bank accounts and mobile money using your Raenest account, seamlessly connecting with PayPal, Payoneer, Wise, Mastercard, Revolut and many more.</p>
+  </div>
+
+  <div class="mock-img">
+    <img class="main" src="https://cdn.prod.website-files.com/67d85bdb392a92fa03e2f524/682f5419c71336ffd4733404_Raenest%20Standing%20mockup%201.webp" alt="Raenest app on a stand">
+    <!-- $3,650 card: bottom left of the phone -->
+    <img class="float card-left" src="https://cdn.prod.website-files.com/67d85bdb392a92fa03e2f524/67fe71652abb49bf3261e1db_money%20everywhere2.svg" alt="">
+    <!-- $57,168 card: top right of the phone -->
+    <img class="float card-right" src="https://cdn.prod.website-files.com/67d85bdb392a92fa03e2f524/67fe71a81bd4684160470954_money%20everywhere1.svg" alt="">
+  </div>
+</section>
+
+
+
+
+
+
+
+<section class="creators">
+
+  <div class="logos-l" style="">
+    <img src="https://cdn.prod.website-files.com/67d85bdb392a92fa03e2f524/67dc4bf00f633246ea915879_Creator-company%20logos.png" alt="">
+    <img src="https://cdn.prod.website-files.com/67d85bdb392a92fa03e2f524/67dc4bf052cb35311f420225_Creator-company%20logos-1.png" alt="">
+    <img src="https://cdn.prod.website-files.com/67d85bdb392a92fa03e2f524/67dc4bf022e80fd8a66d3653_Creator-company%20logos-2.png" alt="">
+    <img src="https://cdn.prod.website-files.com/67d85bdb392a92fa03e2f524/67dc4bf0cf673574048ae41c_Creator-company%20logos-3.png" alt="">
+    <img src="https://cdn.prod.website-files.com/67d85bdb392a92fa03e2f524/67dc4bf0763643399f2bbbe7_Creator-company%20logos-4.png" alt="">
+    <img src="https://cdn.prod.website-files.com/67d85bdb392a92fa03e2f524/67dc4bf0763643399f2bbbfc_Creator-company%20logos-5.png" alt="">
+  </div>
+
+  <div class="fan">
+    <img src="https://cdn.prod.website-files.com/67d85bdb392a92fa03e2f524/6819d4702c0fd378b392551c_Image%20back.webp" alt="">
+    <img src="https://cdn.prod.website-files.com/67d85bdb392a92fa03e2f524/67fe1f188cca21f55a1c3e34_Image%20middle.webp" alt="">
+    <img src="https://cdn.prod.website-files.com/67d85bdb392a92fa03e2f524/67fe1f1810c4b7073c1eb0fd_image%20front.webp" alt="">
+  </div>
+
+  <div class="logos-r">
+    <img src="https://cdn.prod.website-files.com/67d85bdb392a92fa03e2f524/67dc4e394bf57ab612274344_creator%20company%20logo-%20right%2006.png" alt="">
+    <img src="https://cdn.prod.website-files.com/67d85bdb392a92fa03e2f524/67dc4e39f5ac94f893e83220_creator%20company%20logo-%20right%2005.png" alt="">
+    <img src="https://cdn.prod.website-files.com/67d85bdb392a92fa03e2f524/67dc4e392598c0616673cb3e_creator%20company%20logo-%20right%2003.png" alt="">
+    <img src="https://cdn.prod.website-files.com/67d85bdb392a92fa03e2f524/67dc4e39b0a720d79dbbdd76_creator%20company%20logo-%20right%2004.png" alt="">
+    <img src="https://cdn.prod.website-files.com/67d85bdb392a92fa03e2f524/67dc4e39ec187bfc99953077_creator%20company%20logo-%20right%2002.png" alt="">
+    <img src="https://cdn.prod.website-files.com/67d85bdb392a92fa03e2f524/67dc4e390ab7c383a4149381_creator%20company%20logo-%20right%2001.png" alt="">
+  </div>
+
+</section>
+
+
+
+
+
+
+<section class="who">
+    <div class="who__inner">
+      <h2 class="who__title">
+        <span class="who__words">
+          <span class="who__word">Creators</span>
+          <span class="who__word">Freelancers</span>
+          <span class="who__word">Designers</span>
+          <span class="who__word">Developers</span>
+          <span class="who__word">Remote workers</span>
+          <span class="who__word">Marketers</span>
+        </span>
+        <span class="who__text">use Raenest to receive and manage their money — save, spend, and invest.</span>
+      </h2>
+      <p class="who__sub">At Upwork, Andela, Fiver, Toptal, Contra, YouTube, Freelancer, Peopleperhour, Deel and anywhere you need to get paid.</p>
+    </div>
+  </section>
+
+
+
+
+
+
+  <section class="steps">
+    <div class="steps__container">
+      <h2 class="steps__title">Get Paid Globally in 3 Easy Steps</h2>
+ 
+      <div class="steps__grid">
+        <article class="step">
+          <span class="step__num">1</span>
+          <div class="step__img">
+            <img src="https://cdn.prod.website-files.com/67d85bdb392a92fa03e2f524/67deaf884b0b9419f973baef_Paid%20Globally%20img.png" alt="Personal profile sign up screen">
+          </div>
+          <div class="step__body">
+            <h3>Quick Sign up</h3>
+            <p>Create your account in minutes—input legal name, strong password, and confirm verification code.</p>
+          </div>
+        </article>
+ 
+        <article class="step">
+          <span class="step__num">2</span>
+          <div class="step__img">
+            <img src="https://cdn.prod.website-files.com/67d85bdb392a92fa03e2f524/67deaf882eff45c1fa839dbd_Paid%20Globally%20img%202.png" alt="Verification under review screen">
+          </div>
+          <div class="step__body">
+            <h3>Verify Your Identity</h3>
+            <p>A quick and secure verification process. This is important to help you keep your account safe.</p>
+          </div>
+        </article>
+ 
+        <article class="step">
+          <span class="step__num">3</span>
+          <div class="step__img">
+            <img src="https://cdn.prod.website-files.com/67d85bdb392a92fa03e2f524/680a8ffc246faf7a360ef5bf_3%20steps%20personal%203rd.webp" alt="US Dollar and British Pound accounts">
+          </div>
+          <div class="step__body">
+            <h3>Get Your Accounts</h3>
+            <p>Start receiving payments, saving in foreign currencies, and spending globally.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
+  <section class="blog">
+    <div class="blog__container">
+      <h2 class="blog__title">The latest from Raenest: Tips, News and Updates</h2>
+ 
+      <div class="blog__grid">
+        <a class="post" href="https://www.raenest.com/blog/fixed-savings-in-nigeria-how-to-save-your-naira-and-earn-interest">
+          <img src="https://cdn.prod.website-files.com/67d8614570bbea9ea5932686/6ae4f61d4a1a3af597a6256b_How%20to%20Save%20Naira%20and%20Earn%20Interest-p-2000.jpg" alt="How to Save Naira and Earn Interest">
+          <h3>Fixed Savings: How to Save Money In Naira and Earn Interest.</h3>
+          <span class="post__btn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12h17M14 5l7 7-7 7"/></svg></span>
+        </a>
+ 
+        <a class="post" href="https://www.raenest.com/blog/how-to-invest-in-the-nasdaq-100-from-nigeria">
+          <img src="https://cdn.prod.website-files.com/67d8614570bbea9ea5932686/6ae4ef797a42298c19cf36ce_Invest%20in%20Nasdaq%20100-p-2000.jpg" alt="How to Invest in the Nasdaq 100 From Nigeria">
+          <h3>How to Invest in the Nasdaq 100 From Nigeria</h3>
+          <span class="post__btn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12h17M14 5l7 7-7 7"/></svg></span>
+        </a>
+ 
+        <a class="post" href="https://www.raenest.com/blog/raenest-one-platform-to-receive-send-spend-save-and-grow-your-money">
+          <img src="https://cdn.prod.website-files.com/67d8614570bbea9ea5932686/6ae46b37be3b06195dac5859_New%20Features%20Banner-p-2000.jpg" alt="Raenest: One Platform to Receive, Send, Spend, Save and Grow Your Money">
+          <h3>Raenest: One Platform to Receive, Send, Spend, Save and Grow Your Money</h3>
+          <span class="post__btn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12h17M14 5l7 7-7 7"/></svg></span>
+        </a>
+      </div>
+ 
+      <div class="news">
+        <h3 class="news__title">Get the latest update straight into your mail</h3>
+        <form class="news__form" action="#" method="post">
+          <input type="email" placeholder="Enter your email address" aria-label="Email address" required>
+          <button type="submit">Join newsletter</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+  <section class="press">
+    <h2 class="press__title">Raenest in the News!</h2>
+ 
+    <div class="press__logos">
+      <img class="logo-1" src="https://cdn.prod.website-files.com/67d85bdb392a92fa03e2f524/6974d282ff50ab3842ae30f0_images%20(4).png" alt="Techpoint Africa">
+      <img class="logo-2" src="https://cdn.prod.website-files.com/67d85bdb392a92fa03e2f524/6974d2188a5346d4453f3396_TC-Logos_TC-Logo-_-Orange-Combination-Mark-p-2000.png" alt="Techcabal">
+      <img class="logo-3" src="https://cdn.prod.website-files.com/67d85bdb392a92fa03e2f524/6970c15f74f1c628029c77b8_techcrunch-logo%201.jpg" alt="TechCrunch">
+      <img class="logo-4" src="https://cdn.prod.website-files.com/67d85bdb392a92fa03e2f524/6974d1e6c08b68dd8a635dd7_logo-condia.b26a2aa3.png" alt="Condia">
+      <img class="logo-5" src="https://cdn.prod.website-files.com/67d85bdb392a92fa03e2f524/6970ab3af79887faec24d46a_finextra-logo.png" alt="Finextra">
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+
+
+  <section class="faq">
+    <h2 class="faq__title">Frequently asked questions</h2>
+ 
+    <div class="faq__list">
+      <details class="faq__item" open>
+        <summary class="faq__q">Is Raenest a bank?<span class="faq__icon"></span></summary>
+        <div class="faq__a"><div>
+          <p>Raenest is a Financial Technology (FinTech) Company, not a Bank. Banking services are provided by banking partners. Card services are provided by Raenest's technology partners, authorized by Visa and Mastercard to issue cards operating over their networks.</p>
+        </div></div>
+      </details>
+ 
+      <details class="faq__item">
+        <summary class="faq__q">How long does it take to get my bank account?<span class="faq__icon"></span></summary>
+        <div class="faq__a"><div>
+          <p>You’ll receive instant access to your account once you’ve submitted all required information and completed verification.</p>
+        </div></div>
+      </details>
+ 
+      <details class="faq__item">
+        <summary class="faq__q">What's the fee for receiving in my bank account?<span class="faq__icon"></span></summary>
+        <div class="faq__a"><div>
+          <p>The fees for incoming transfers are determined on a case-by-case basis. For a detailed breakdown of charges, please consult our full fee schedule <a href="https://help.raenest.com/en/collections/3533699-fees-and-charges" target="_blank" rel="noopener">here.</a></p>
+        </div></div>
+      </details>
+ 
+      <details class="faq__item">
+        <summary class="faq__q">What is the Raenest USD Visa Card and how is it related to Raenest?<span class="faq__icon"></span></summary>
+        <div class="faq__a"><div>
+          <p>The Raenest USD Visa Card is a standalone payment card issued by Rain, a Visa Principal Member, and powered by the Visa Inc.. Raenest provides the platform interface through which users can access and manage the card.</p>
+          <p>The card itself is a separate product from the broader Raenest platform. Services such as global accounts, stablecoins, currency conversion, money transfers, and investments are not features of the Rain-issued card but are independent offerings available within the Raenest platform.</p>
+        </div></div>
+      </details>
+ 
+      <details class="faq__item">
+        <summary class="faq__q">Can I use my USD account on Upwork, Deel, Fiverr, or Payoneer?<span class="faq__icon"></span></summary>
+        <div class="faq__a"><div>
+          <p>Yes, you can use your USD account to receive payments from any platform that supports USD bank deposits.</p>
+        </div></div>
+      </details>
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+
+
+  <footer class="footer">
+
+  <div class="foot-top">
+    <div class="brand">
+      <a href="index.html"><img class="flogo" src="raenestwhitelogo.png" alt="Raenest"></a>
+      <address>7460 Warren Parkway, Suite 100,<br>Frisco, TX 75034, US</address>
+      <div class="social">
+        <a href="https://youtube.com/@raenest?si=fpQTBa5Ywj5ezgIv"><img src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/icons/youtube.svg" alt="YouTube"></a>
+        <a href="https://www.instagram.com/raenestapp/"><img src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/icons/instagram.svg" alt="Instagram"></a>
+        <a href="https://x.com/RaenestHQ"><img src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/icons/twitter-x.svg" alt="X"></a>
+        <a href="https://www.linkedin.com/company/raenest/"><img src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/icons/linkedin.svg" alt="LinkedIn"></a>
+      </div>
+    </div>
+
+    <div class="cols">
+      <div>
+        <h4>Personal</h4>
+        <a href="https://www.raenest.com/send-money">Send Money</a>
+        <a href="https://www.raenest.com/cards">Cards</a>
+        <a href="https://www.raenest.com/receive-money">Receive Money</a>
+        <a href="https://www.raenest.com/global-accounts">Global Accounts</a>
+        <a href="https://www.raenest.com/invoices">Invoices</a>
+      </div>
+
+      <div>
+        <h4>Business</h4>
+        <a href="https://www.raenest.com/business/make-payments">Make Payments</a>
+        <a href="https://www.raenest.com/business/cards">Cards</a>
+        <a href="https://www.raenest.com/business/receive-payments">Receive Payments</a>
+        <a href="https://www.raenest.com/business/global-accounts">Global Accounts</a>
+        <a href="https://www.raenest.com/business/invoices">Invoices</a>
+      </div>
+
+      <div>
+        <h4>Company</h4>
+        <a href="https://www.raenest.com/about-us">Our Story</a>
+        <a href="https://raenest.bamboohr.com/careers">Career <span style="font-size: 8px;">We are Hiring!</span></a>
+        <a href="https://www.raenest.com/womens-mentorship-program">Women's Mentorship</a>
+        <a href="https://www.raenest.com/blog">News & Blog</a>
+        <a href="https://www.raenest.com/india">India</a>
+        <a href="https://www.raenest.com/philippines">Philippines</a>
+        <a href="https://www.raenest.com/usa">United States</a>
+      </div>
+
+      <div>
+        <h4>Help</h4>
+        <a href="http://help.raenest.com">Customer Help</a>
+        <a href="https://www.raenest.com/contact-us">Contact us</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="foot-bottom">
+    <span>© Copyright 2026. All Right Reserved</span>
+    <div>
+      <a href="https://www.raenest.com/terms-of-service">Terms & Conditions</a>
+      <a href="https://www.raenest.com/privacy-policy">Privacy Policy</a>
+    </div>
+  </div>
+
+  <div class="legal">
+    <p>Raenest is a Financial Technology (FinTech) Company, not a Bank. Banking services are provided by banking partners. Card services are provided by Raenest's technology partners, authorized by Visa and Mastercard to issue cards operating over their networks.</p>
+    <p>The Raenest USD Visa Card is a standalone payment card, powered by the Visa Inc.. Raenest provides the platform interface through which users can access and manage the card. The card itself is a separate product from the broader Raenest platform. Services such as global accounts, stablecoins, currency conversion, money transfers, and investments are independent offerings available within the Raenest platform.</p>
+    <p>Raelic LLC is registered in the United States as a Money Services Business and maintains NMLS ID 2746973</p>
+    <p>Raenest is not a broker-dealer, investment adviser or member of FINRA. Securities offered by Alpaca Securities LLC ("Alpaca Securities"). Alpaca Securities is a member of FINRA and the Securities Investor Protection Corporation. Raenest does not recommend any specific securities or investment strategies. Investing involves risk & investments may lose value, including the loss of principal. Past performance does not guarantee future results. Investors should consider their investment objectives and risks carefully before investing. U.S. stock investments are held with Alpaca Securities LLC, a U.S.-licensed broker-dealer regulated by the SEC and FINRA. Your assets are custodied under strict regulatory and security standards, and you retain full visibility into your holdings and performance at all times. Investment feature is offered in partnership with City Investment Capital Limited, a firm licensed by the Securities and Exchange Commission of Nigeria.</p>
+    <p>Raenest Inc. Canada is registered with FINTRAC as a Money Services Business (Registration No. 1443707-1). Registered Office: 212 King Street West, 6th Floor, Toronto, ON M5H 1K5.</p>
+    <p>Raenest Inc. is licensed by the Central Bank of Nigeria as an International Money Transfer Operator. Banking services in the UK are provided by Clear Junction Ltd, authorised and regulated by the Financial Conduct Authority (FCA) as an Electronic Money Institution. U.S. securities brokerage services are provided by Alpaca Securities LLC (“Alpaca Securities”), a member of FINRA and SIPC, and a wholly-owned subsidiary of AlpacaDB, Inc.</p>
+  </div>
+
+</footer>
+</body>
+</html>
