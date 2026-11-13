@@ -188,7 +188,7 @@ nav {
   display: grid;
   grid-template-columns: 1.05fr 1fr;
   align-items: start;
-  min-height: clamp(560px, 38vw, 760px);
+  min-height: clamp(560px, 52vw, 760px);
   padding: 20px max(4.6%, calc((100% - 1340px) / 2)) 0;
   background: var(--purple) url("https://cdn.prod.website-files.com/67d85bdb392a92fa03e2f524/681149da8df0d9921c04e3fc_hero%20bg.svg") center bottom / cover no-repeat;
   color: #fff;
@@ -296,7 +296,7 @@ nav {
 .hero-img {
   position: relative;
   align-self: end;
-  margin-top: -20px;
+  
 }
 .hero-img picture {
   display: block;
@@ -311,6 +311,8 @@ nav {
   position: absolute;
   inset: auto auto 12% -30%;
   width: 58%;
+  margin-left: 80px;
+  backdrop-filter: blur(12px);
 }
 
 @media (max-width: 1200px) {
@@ -729,7 +731,7 @@ nav {
   --i: 0;
   padding: 3vw 0 4vw;
 }
-/* The checked tab decides which slide shows */
+
 .everyone:has(#t2:checked) {
   --i: 1;
 }
